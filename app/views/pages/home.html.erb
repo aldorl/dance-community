@@ -1,0 +1,9 @@
+<h1>Welcome to the Dance Community</h1>
+
+<% if member_signed_in? %>
+    <h2>Logged in user: <%= current_member.email %></h2>
+<% else %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render "devise/sessions/form", f: f %>
+    <% end %>
+<% end %>

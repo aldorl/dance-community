@@ -32,10 +32,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
 group :development, :test do
   gem 'better_errors'
   gem 'capybara-email'
-  gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'database_cleaner'
@@ -44,7 +45,12 @@ group :development, :test do
   gem 'pry'
   gem 'pry-nav'
   gem 'pry-rails', '~> 0.3.2'
+  gem 'selenium-webdriver'
   gem 'simple_bdd'
   gem 'shoulda-matchers'
   gem 'spring'
+end
+
+group :test do
+  gem 'email_spec'
 end
