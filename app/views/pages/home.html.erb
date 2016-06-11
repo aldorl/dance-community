@@ -3,7 +3,17 @@
 <% if member_signed_in? %>
     <h2>Logged in user: <%= current_member.email %></h2>
 <% else %>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= render "devise/sessions/form", f: f %>
-    <% end %>
+
+    <div>
+        <h2>Member? Log In!</h2>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "devise/sessions/form", f: f %>
+        <% end %>
+    </div>
+
+    <div>
+        <h2>New? <%= link_to "Sign up!", new_member_registration_path %></h2>
+    </div>
+
 <% end %>
