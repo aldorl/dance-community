@@ -1,0 +1,17 @@
+<h2>Thanks for signing up </h2>
+
+<p>Add your basic info</p>
+
+<%= form_for(@profile, :url => wizard_path, :method => :put) do |f| %>
+    <%= f.text_field :firstname, :placeholder => 'First Name' %>
+    <%= f.text_field :lastname, :placeholder => 'Last Name' %>
+    <%= f.text_field :location, :placeholder => 'Location' %>
+    <%= f.text_area :bio, :placeholder => 'Bio' %>
+    <%= f.submit 'Next', :class => 'btn btn-primary' %>
+<% end %>
+
+<p>
+    Some extra info: Member ID is <%= @profile.member_id %>
+</p>
+
+<%# link_to 'skip', next_wizard_path %>

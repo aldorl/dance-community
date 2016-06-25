@@ -1,0 +1,10 @@
+<p>Choose your type</p>
+
+<p>
+    Hey there <%= @profile.firstname %>
+</p>
+
+<%= form_for("membership", :url => wizard_path, :method => :put) do |f| %>
+    <%= f.select "membership_type", options_for_select([ "Dancer", "Host" ]) %>
+    <%= f.submit 'Finish', :class => 'btn btn-primary' %>
+<% end %>

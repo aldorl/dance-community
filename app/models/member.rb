@@ -5,6 +5,4 @@ class Member < ActiveRecord::Base
             :recoverable, :rememberable, :trackable, :validatable
 
     has_one :profile
-
-    # accepts_nested_attributes_for :profiles
 end
